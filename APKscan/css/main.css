@@ -1,22 +1,67 @@
+/*
+colors
+light blue:		#59A3D6
+dark blue:		#254357
+gray:			#C0C0C0
+*/
 
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-
-
-
-
-
-
-
-
-
-
-
-
+body
+{
+	font-family: 'Open Sans', sans-serif;
+	padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: #59A3D6;
+    color: white;
+}
 
 
 
+a:hover
+{
+	text-decoration: none;
+	color: #C0C0C0
+}
 
+a:visited
+{
+	color: white;
+}
+
+.navtext
+{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+	margin-right: 10px;
+}
+
+.navbar
+{
+	background-color: #254357;
+}
+
+.icon-bar
+{
+	background-color: white;
+}
+
+.navbar-toggle:hover .icon-bar
+{
+	/*background-color: white;*/
+}
+
+.nav a
+{
+	color: white;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+}
+
+.nav:hover a
+{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+	color: #254357;
+}
