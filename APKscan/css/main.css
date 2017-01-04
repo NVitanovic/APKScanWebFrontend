@@ -63,5 +63,12 @@ a:visited
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 300;
 	font-size: 20px;
-	color: #254357;
+	/*color: #254357;
+	color: orange;*/
+}
+
+ul.nav a:hover
+{
+	color: #59A3D6; /* !important before ; if bugs later on*/
+	background-color: #254357;
 }
