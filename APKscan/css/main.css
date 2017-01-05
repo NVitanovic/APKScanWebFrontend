@@ -1,25 +1,35 @@
 /*
-colors
-light blue:		#59A3D6
-dark blue:		#254357
-gray:			#C0C0C0
+light blue			#59A3D6
+dark blue			#254357
+gray				#C0C0C0
+link light blue		#6AC2FF
 */
 
 body
 {
 	font-family: 'Open Sans', sans-serif;
+	font-weight: 300px;
 	padding-top: 50px;
     padding-bottom: 20px;
     background-color: #59A3D6;
     color: white;
 }
 
+.jumbotron
+{
+	background-color: #59A3D6;
+}
 
+a
+{
+	color: white;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
 
 a:hover
 {
 	text-decoration: none;
-	color: #C0C0C0
 }
 
 a:visited
@@ -27,17 +37,10 @@ a:visited
 	color: white;
 }
 
-.navtext
-{
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 300;
-	font-size: 20px;
-	margin-right: 10px;
-}
-
 .navbar
 {
 	background-color: #254357;
+	font-size: 20px;
 }
 
 .icon-bar
@@ -50,25 +53,36 @@ a:visited
 	/*background-color: white;*/
 }
 
-.nav a
-{
-	color: white;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 300;
-	font-size: 20px;
-}
-
-.nav:hover a
-{
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 300;
-	font-size: 20px;
-	/*color: #254357;
-	color: orange;*/
-}
-
 ul.nav a:hover
 {
-	color: #59A3D6; /* !important before ; if bugs later on*/
+	color: #6AC2FF; /* !important before ; if bugs later on*/
 	background-color: #254357;
+}
+
+footer
+{
+	position: fixed;
+	height: 40px;
+	bottom: 0;
+	width: 100%;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-size: 15px;
+}
+
+.footer-copyright
+{
+	display: inline;
+	margin-left: 20px;
+}
+
+.footer-tos
+{
+	float: right;
+	margin-right: 20px;
+}
+
+footer a:hover
+{
+	color: #254357;
 }
