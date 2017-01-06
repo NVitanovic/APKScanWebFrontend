@@ -27,14 +27,15 @@ a
 	font-weight: 300;
 }
 
-a:hover
-{
-	text-decoration: none;
-}
-
 a:visited
 {
 	color: white;
+}
+
+a:hover
+{
+	text-decoration: none;
+	color: #254357;
 }
 
 .navbar
@@ -53,11 +54,11 @@ a:visited
 	/*background-color: white;*/
 }
 
-ul.nav a:hover
+/*ul.nav a:hover
 {
-	color: #6AC2FF; /* !important before ; if bugs later on*/
+	color: #6AC2FF; /* !important before ; if bugs later on* /
 	background-color: #254357;
-}
+}*/
 
 footer
 {
@@ -82,7 +83,120 @@ footer
 	margin-right: 20px;
 }
 
-footer a:hover
+.logoLetters
 {
-	color: #254357;
+	width: 750px;
+	margin-top: 20px;
 }
+
+.fileUpload
+{
+	border: 2px solid white;
+	border-radius: 2px;
+	max-width: 750px;
+	margin-top: 30px;
+}
+
+.button
+{
+	background-color: #254357;
+	border-color: #254357;
+	border-style: solid;
+	border-radius: 2px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	box-shadow: 0px 0px 5px 1px rgba(255, 255, 255, .4);
+}
+
+.button:hover, .button:focus, .button:active, .button.active
+{
+	background-color: #315976;
+	border-color: #315976;
+	color: white;
+	box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, .7);
+}
+
+.buttonUpload
+{
+	margin: 5px;
+	font-size: 18px;
+	width: 120px;
+	height: 40px;
+}
+
+.termsCheck
+{
+	max-width: 285px;
+	margin-top: 30px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+}
+
+input[type='checkbox']
+{
+	margin-right: 15px;
+
+}
+
+input[type=checkbox].css-checkbox
+{
+    position: absolute;
+    z-index: -1000;
+    left: -1000px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+input[type=checkbox].css-checkbox + label.css-label
+{
+    padding-left: 25px;
+    height: 20px;
+    display: inline-block;
+    line-height: 20px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    font-size: 20px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+input[type=checkbox].css-checkbox:checked + label.css-label
+{
+    background-position: 0 -20px;
+}
+label.css-label
+{
+	background-image: url("../res/checkbox.png");
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.scan
+{
+	max-width: 150px;
+	margin-top: 20px;
+}
+
+.buttonScan
+{
+	font-size: 24px;
+	width: 150px;
+	height: 50px;
+}
+
+#fileInput
+{
+	display: none;
+}
+
+
+
+
