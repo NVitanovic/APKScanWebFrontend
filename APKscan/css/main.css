@@ -2,7 +2,8 @@
 light blue			#59A3D6
 dark blue			#254357
 gray				#C0C0C0
-link light blue		#6AC2FF
+background white 	#F8F8F8
+button hover		#315976
 */
 
 body
@@ -11,31 +12,31 @@ body
 	font-weight: 300px;
 	padding-top: 50px;
     padding-bottom: 20px;
-    background-color: #59A3D6;
-    color: white;
+    background-color: #F8F8F8;
+    color: #254357;
 }
 
 .jumbotron
 {
-	background-color: #59A3D6;
+	background-color: #F8F8F8;
 }
 
 a
 {
-	color: white;
+	color: #254357;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 300;
 }
 
 a:visited
 {
-	color: white;
+	color: #254357;
 }
 
 a:hover
 {
 	text-decoration: none;
-	color: #254357;
+	color: #59A3D6;
 }
 
 .navbar
@@ -54,33 +55,16 @@ a:hover
 	/*background-color: white;*/
 }
 
-/*ul.nav a:hover
+ul.nav a
 {
-	color: #6AC2FF; /* !important before ; if bugs later on* /
-	background-color: #254357;
-}*/
-
-footer
-{
-	position: fixed;
-	height: 40px;
-	bottom: 0;
-	width: 100%;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 300;
-	font-size: 15px;
+	color: white; /* !important before ; if bugs later on*/
+	/*background-color: #254357;*/
 }
 
-.footer-copyright
+ul.nav a:hover
 {
-	display: inline;
-	margin-left: 20px;
-}
-
-.footer-tos
-{
-	float: right;
-	margin-right: 20px;
+	color: #254357; /* !important before ; if bugs later on*/
+	/*background-color: #254357;*/
 }
 
 .logoLetters
@@ -91,7 +75,7 @@ footer
 
 .fileUpload
 {
-	border: 2px solid white;
+	border: 2px solid #254357;
 	border-radius: 2px;
 	max-width: 750px;
 	margin-top: 30px;
@@ -105,7 +89,7 @@ footer
 	border-radius: 2px;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 300;
-	box-shadow: 0px 0px 5px 1px rgba(255, 255, 255, .4);
+	color: white;
 }
 
 .button:hover, .button:focus, .button:active, .button.active
@@ -113,7 +97,6 @@ footer
 	background-color: #315976;
 	border-color: #315976;
 	color: white;
-	box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, .7);
 }
 
 .buttonUpload
@@ -126,17 +109,22 @@ footer
 
 .termsCheck
 {
-	max-width: 285px;
+	max-width: 300px;
 	margin-top: 30px;
 	font-family: 'Open Sans', sans-serif;
-	font-weight: 300;
+	font-weight: 400;
 	font-size: 20px;
+	color: #254357;
+}
+
+.termsCheck a
+{
+	font-weight: 400;
 }
 
 input[type='checkbox']
 {
 	margin-right: 15px;
-
 }
 
 input[type=checkbox].css-checkbox
@@ -196,6 +184,32 @@ label.css-label
 {
 	display: none;
 }
+
+footer
+{
+	position: fixed;
+	height: 40px;
+	bottom: 0;
+	width: 100%;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 15px;
+	color: #254357;
+}
+
+.footer-copyright
+{
+	display: inline;
+	margin-left: 20px;
+}
+
+.footer-tos
+{
+	float: right;
+	margin-right: 20px;
+	font-weight: 400;
+}
+
 
 
 
