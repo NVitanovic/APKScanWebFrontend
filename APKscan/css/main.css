@@ -67,6 +67,20 @@ ul.nav a:hover
 	/*background-color: #254357;*/
 }
 
+a.svg
+{/* makes SVG clickable*/
+ position: relative;
+}
+a.svg:after
+{/* makes SVG clickable*/
+  content: ""; 
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left:0;
+}
+
 .logoLetters
 {
 	width: 750px;

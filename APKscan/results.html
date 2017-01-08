@@ -6,14 +6,14 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>APK scan</title>
+        <title>Results - APK scan</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/results.css">
 
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&amp;subset=latin-ext" rel="stylesheet">
 
@@ -51,23 +51,44 @@
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <!--<div class="col-md-4 col-xs-4">-->
-       <a href="index.html" class="svg logoLetters img-responsive center-block">
-        <object data="res/logo-letters.svg" type="image/svg+xml"></object>
-      </a>
-        <div class="fileUpload center-block">
-          <button type="button" class="btn button buttonUpload" id="buttonUpload">Select file</button>
-        </div>
-        <div class="termsCheck center-block">
-          <input type="checkbox" name="checkboxG2" id="checkboxTos" class="css-checkbox"/> <!-- checked="checked"-->
-          <label for="checkboxTos" class="css-label"></label>
-          I agree with <a href="tos.html">terms of service</a>
-        </div>
-        <div class="scan center-block">
-          <button type="button" class="btn button buttonScan" id="buttonScan" disabled>Scan</button>
-        </div>
+        <a href="index.html" class="svg logoLetters img-responsive center-block">
+          <object data="res/logo-letters.svg" type="image/svg+xml"></object>
+        </a>
+        <table class="tableData table">
+          <tr>
+            <td>File name:</td>
+            <td><span id="fileName">dummyData.apk</span></td>
+          </tr>
+          <tr>
+            <td>MD5:</td>
+            <td><span id="md5">d131dd02c5e6eec4</span></td>
+          </tr>
+          <tr>
+            <td>SHA-256:</td>
+            <td><span id="sha256">cac2c674bc41831d0b74a87b08248924afb4124ffaf680d5fd31621b2c677fbc</span></td>
+          </tr>
+          <tr>
+            <td>Detection:</td>
+            <td><span id="detection">2/6</td>  
+          </tr>    
+        </table>
+        <table class="tableResultsHead center-block">
+          <tr>
+            <td>Antivirus</td>
+            <td>Result</td>
+          </tr>
+        </table>
+        <table class="tableResults center-block">
+          <tr>
+            <td>Avast</td>
+            <td><!--image here--></td>
+          </tr>
+          <tr>
+            <td>AVG</td>
+            <td><!--image here--></td>
+          </tr>
+        </table>
       </div>
-      <input type="file" id="fileInput"></input>
 
         <footer>
           <p class="footer-copyright">&copy; APK scan 2017</p>
@@ -76,6 +97,6 @@
 
         <script src="js/vendor/jquery-1.11.2.min.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="js/main.js"></script>
+        <script src="js/results.js"></script>
     </body>
 </html>

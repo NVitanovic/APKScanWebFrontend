@@ -18,6 +18,5 @@ buttonUpload.onclick = function()
 
 buttonScan.onclick = function()
 {
-	alert("Scaning...");
-	// open another page
+	window.open("results.html", "_self");
 };
