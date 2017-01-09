@@ -54,7 +54,8 @@
         <a href="index.html" class="svg logoLetters img-responsive center-block">
           <object data="res/logo-letters.svg" type="image/svg+xml"></object>
         </a>
-        <table class="tableData table">
+        <div class="table-responsive">
+          <table class="tableData table table-condensed">
           <tr>
             <td>File name:</td>
             <td><span id="fileName">dummyData.apk</span></td>
@@ -69,23 +70,34 @@
           </tr>
           <tr>
             <td>Detection:</td>
-            <td><span id="detection">2/6</td>  
-          </tr>    
-        </table>
-        <table class="tableResultsHead center-block">
-          <tr>
-            <td>Antivirus</td>
-            <td>Result</td>
+            <td><span id="detection">1/5</td>
           </tr>
         </table>
+        </div>
         <table class="tableResults center-block">
           <tr>
-            <td>Avast</td>
-            <td><!--image here--></td>
+            <th class="avListPad">Antivirus</th>
+            <th id="thResults">Results</th>
           </tr>
           <tr>
-            <td>AVG</td>
-            <td><!--image here--></td>
+            <td class="avListPad firstRow">Avast</td>
+            <td class="firstRow"><img src="res/result-green.svg" class="img-responsive resultIcon" alt="result-green"></td>
+          </tr>
+          <tr>
+            <td class="avListPad">AVG</td>
+            <td><img src="res/result-green.svg" class="img-responsive resultIcon" alt="result-green"></td>
+          </tr>
+          <tr>
+            <td class="avListPad">CM security</td>
+            <td><img src="res/result-green.svg" class="img-responsive resultIcon" alt="result-green"></td>
+          </tr>
+          <tr>
+            <td class="avListPad">BitDefender</td>
+            <td><img src="res/result-red.svg" class="img-responsive resultIcon" alt="result-red"></td>
+          </tr>
+          <tr>
+            <td class="avListPad">Malwarebytes</td>
+            <td><img src="res/result-green.svg" class="img-responsive resultIcon" alt="result-green"></td>
           </tr>
         </table>
       </div>

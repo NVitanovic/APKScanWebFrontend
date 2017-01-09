@@ -85,6 +85,7 @@ a.svg:after
 {
 	width: 400px;
 	margin-top: -10px;
+	margin-bottom: 10px;
 }
 
 .tableData
@@ -92,46 +93,105 @@ a.svg:after
 	font-size: 18px;
 	font-weight: 300;
 	margin-left: 50px;
+	width: 900px;
+	border: hidden;
 }
 
 .tableData td
 {
 	min-width: 100px;
+	border: hidden;
 }
 
-.tableResultsHead
+.tableData>thead>tr>th, .tableData>tbody>tr>th, .tableData>tfoot>tr>th, .tableData>thead>tr>td, .tableData>tbody>tr>td, .tableData>tfoot>tr>td
 {
-	margin-top: 50px;
-	font-size: 18px;
-	font-weight: 400;
-	text-align: center;
-	width: 1000px;
-	/*border: 2px solid black;*/
+    padding: 1px;
 }
 
-.tableResultsHead td
+@media (max-width: 768px)
 {
-	min-width: 500px;
-	/*border: 2px solid gray;*/
+	.tableData
+	{
+		margin-left: 5px;
+	}
 }
 
 .tableResults
 {
 	font-size: 18px;
 	font-weight: 300;
-	text-align: center;
-	width: 1000px;
+	text-align: left;
+	max-width: 1000px;
+	width: 50%;
+	/*border: 2px solid black;*/
 }
 
 .tableResults td
 {
-	min-width: 500px;
+	width: 1%;
+	/*border: 2px solid gray;*/
 }
 
+.tableResults th
+{
+	border-bottom: 1px solid #557387;
+	padding-bottom: 5px;
+}
 
+.firstRow
+{
+	padding-top: 10px;
+}
 
+#thResults
+{
+	text-align: center;
+}
 
+.avListPad
+{
+	padding-left: 120px;
+	padding-left: 17%;
+}
 
+td img
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media (max-width: 1200px)
+{
+	.tableResults
+	{
+		width: 70%;
+	}
+
+	.avListPad
+	{
+		padding-left: 110px;
+		padding-left: 15%;
+	}
+}
+
+@media (max-width: 768px)
+{
+	.tableResults
+	{
+		width: 95%;
+	}
+
+	.avListPad
+	{
+		padding-left: 10%;
+	}
+}
+
+.resultIcon
+{
+	max-width: 30px;
+}
 
 footer
 {
