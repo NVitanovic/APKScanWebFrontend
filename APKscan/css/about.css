@@ -1,0 +1,105 @@
+/*
+light blue			#59A3D6
+dark blue			#254357
+gray				#C0C0C0
+background white 	#F8F8F8
+button hover		#315976
+*/
+
+body
+{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300px;
+	padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: #F8F8F8;
+    color: #254357;
+}
+
+.jumbotron
+{
+	background-color: #F8F8F8;
+}
+
+a
+{
+	color: #254357;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+
+a:visited
+{
+	color: #254357;
+}
+
+a:hover
+{
+	text-decoration: none;
+	color: #59A3D6;
+}
+
+.navbar
+{
+	background-color: #254357;
+	font-size: 20px;
+}
+
+.icon-bar
+{
+	background-color: white;
+}
+
+.navbar-toggle:hover .icon-bar
+{
+	/*background-color: white;*/
+}
+
+ul.nav a
+{
+	color: white; /* !important before ; if bugs later on*/
+	/*background-color: #254357;*/
+}
+
+ul.nav a:hover
+{
+	color: #254357; /* !important before ; if bugs later on*/
+	/*background-color: #254357;*/
+}
+
+
+
+
+
+
+footer
+{
+	position: fixed;
+	height: 40px;
+	bottom: 0;
+	width: 100%;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 15px;
+	color: #254357;
+	background-color: #F8F8F8;
+	padding-top: 0.7%;
+}
+
+.footer-copyright
+{
+	display: inline;
+	margin-left: 20px;
+}
+
+.footer-tos
+{
+	float: right;
+	margin-right: 20px;
+	font-weight: 400;
+}
+
+
+
+
+
