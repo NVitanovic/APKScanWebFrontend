@@ -1,6 +1,6 @@
-Last modified on 10 September 2016.
+Last modified on 11 January 2017
 
-Please read these Terms of Service ("Terms", "Terms of Service") carefully before using the http://www.apkscan.online website (the "Service") operated by ApkScan ("us", "we", or "our"). These Terms of Service ("Terms") govern your access to and use of www.apkscan.online and our products and services ("Services"), and any information, text, graphics, URLs, files, audio, video, photos or other materials uploaded, downloaded or appearing on the Services ("Content"). By using and/or accessing our Services, you agree that you have read, understood and consent to be bound by these Terms.
+Please read these Terms of Service ("Terms", "Terms of Service") carefully before using the http://www.apkscan.online website (the "Service") operated by APKScan ("us", "we", or "our"). These Terms of Service ("Terms") govern your access to and use of www.apkscan.online and our products and services ("Services"), and any information, text, graphics, URLs, files, audio, video, photos or other materials uploaded, downloaded or appearing on the Services ("Content"). By using and/or accessing our Services, you agree that you have read, understood and consent to be bound by these Terms.
 
 Unless otherwise specified, these Services are for your personal and non-commercial use.
 
@@ -15,7 +15,8 @@ You must follow all policies made available to you within the Services. You also
 <b>Privacy</b>
 
 APKScan’s Privacy Policy explains how we treat your personal data and protect your privacy when you use our Services.
-Copyright
+
+<b>Copyright</b>
 
 APKScan will respond to notices of alleged copyright infringement that comply with applicable law and are properly provided to us. If you believe that your content has been copied in a way that constitutes copyright infringement, please provide us with the following information:
 
@@ -64,7 +65,8 @@ Your access to and use of the Services is at your own risk. You understand and a
 You also agree that APKScan has no responsibility or liability for the deletion of, or the failure to store or to transmit, any content and other communications maintained by the Services.
 
 The Services may contain links to third-party websites or resources. They may also contain comments and/or posts with non-anchored linked URLs. You acknowledge and agree that we are not responsible or liable for: (i) the availability or accuracy of such websites or resources; or (ii) the content, products, or services on or available from such websites or resources. Links to such websites or resources do not imply any endorsement by APKScan of such websites or resources or the content, products, or services available from such websites or resources. You acknowledge sole responsibility for and assume all risk arising from your use of any such websites or resources. Please note that user comments on URLs and files may contain URLs/links leading to malware.
-Limitation of Liability
+
+<b>Limitation of Liability</b>
 
 TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, APKScan AND ITS PARENT, SUBSIDIARIES, AFFILIATES, OFFICERS, EMPLOYEES, AGENTS, PARTNERS AND LICENSORS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR PUNITIVE DAMAGES, INCLUDING WITHOUT LIMITATION, LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER LOSSES, RESULTING FROM (i) YOUR ACCESS TO OR USE OF OR INABILITY TO ACCESS OR USE THE SERVICES; (ii) ANY CONDUCT OR CONTENT OF ANY THIRD PARTY, INCLUDING WITHOUT LIMITATION, ANY DEFAMATORY, OFFENSIVE OR ILLEGAL CONDUCT OF OTHER USERS OR THIRD PARTIES; (iii) ANY CONTENT OBTAINED FROM THE SERVICES; AND (iv) UNAUTHORISED ACCESS, USE OR ALTERATION OF YOUR TRANSMISSIONS OR CONTENT, WHETHER BASED ON WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE) OR ANY OTHER LEGAL THEORY, WHETHER OR NOT WE HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGE.
 
