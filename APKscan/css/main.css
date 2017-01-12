@@ -121,6 +121,17 @@ a.svg:after
 	height: 40px;
 }
 
+#fileName
+{
+	float: right;
+	height: 50px;
+	padding-top: 18px;
+	padding-right: 15px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+}
+
 .termsCheck
 {
 	max-width: 300px;

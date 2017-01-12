@@ -57,6 +57,7 @@
       </a>
         <div class="fileUpload center-block">
           <button type="button" class="btn button buttonUpload" id="buttonUpload">Select file</button>
+          <span id="fileName">...</span>
         </div>
         <div class="termsCheck center-block">
           <input type="checkbox" name="checkboxG2" id="checkboxTos" class="css-checkbox"/> <!-- checked="checked"-->
@@ -66,6 +67,9 @@
         <div class="scan center-block">
           <button type="button" class="btn button buttonScan" id="buttonScan" disabled>Scan</button>
         </div>
+
+
+        <button type="button" class="btn-lg button center-block" id="buttonHash" style="margin-top: 30px;">Show hash</button>
       </div>
       <input type="file" id="fileInput" accept=".apk"></input>
 
@@ -77,5 +81,11 @@
         <script src="js/vendor/jquery-1.11.2.min.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/hash.js"></script>
+        <script src="js/CryptoJS/components/core-min.js"></script>
+        <script src="js/CryptoJS/rollups/MD5.js"></script>
+        <script src="js/CryptoJS/rollups/sha256.js"></script>
+        <script src="js/CryptoJS/components/enc-base64-min.js"></script>
+        <script src="js/CryptoJS/components/enc-utf16-min.js"></script>
     </body>
 </html>

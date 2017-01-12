@@ -2,6 +2,9 @@ var checkboxTos = document.getElementById('checkboxTos');
 var buttonScan = document.getElementById('buttonScan');
 var buttonUpload = document.getElementById('buttonUpload');
 var fileInput = document.getElementById('fileInput');
+var fileName = document.getElementById('fileName');
+// hashes are automatically calculated after file is chosen
+// they are in global variables named MD5 and SHA256
 
 checkboxTos.onchange = function()
 {
@@ -13,20 +16,24 @@ buttonUpload.onclick = function()
 	fileInput.click();
 };
 
-
+fileInput.onchange = function()
+{
+	var name = fileInput.value.replace(/^.*\\/, "");
+	if(name != "")
+		fileName.innerHTML = name;
+	
+	// TODO: uplaod a file -> notify if failed
+}
 
 buttonScan.onclick = function()
 {
+	// TODO: if file is uploaded go to results page
+
 	window.open("results.html", "_self");
 };
 
-fileInput.onchange = function()
-{
-	var filename = fileInput.value.replace(/^.*\\/, "");
-	alert(filename);
-	// make a span for name of file to scan
-	// get that text and set it \/\/\/
-	// http://bit.ly/2jk39gc
-}
 
-// MD5 http://bit.ly/2ih0aQR
+document.getElementById('buttonHash').onclick = function()
+{
+	alert("MD5: " + MD5 + "\nSHA256: " + SHA256);
+}
