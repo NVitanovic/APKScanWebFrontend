@@ -242,5 +242,31 @@ footer
 	margin-top: 40px;
 }
 
-
-
+.item
+{
+	margin-top: 10px;
+	display: block;
+}
+.item-container .item .title
+{
+	display: block;
+	font-size: 20px;
+}
+.item .content
+{
+	display: block;
+	width: 100%;
+}
+.detections
+{
+	display: block;
+}
+.detections div
+{
+	display: inline-block;
+	font-size:20px;
+}
+.detections .first
+{
+	color:red;
+}
