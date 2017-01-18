@@ -13,6 +13,7 @@
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/results.css">
 
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&amp;subset=latin-ext" rel="stylesheet">
@@ -50,58 +51,65 @@
       </nav>
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
+      <div class="container pad">
         <a href="index.html" class="svg logoLetters img-responsive center-block">
           <object data="res/logo-letters.svg" type="image/svg+xml"></object>
         </a>
-        <div class="table-responsive">
-          <table class="tableData table table-condensed">
-          <tr>
-            <td>File name:</td>
-            <td><span id="fileName">dummyData.apk</span></td>
-          </tr>
-          <tr>
-            <td>MD5:</td>
-            <td><span id="md5">d131dd02c5e6eec4</span></td>
-          </tr>
-          <tr>
-            <td>SHA-256:</td>
-            <td><span id="sha256">cac2c674bc41831d0b74a87b08248924afb4124ffaf680d5fd31621b2c677fbc</span></td>
-          </tr>
-          <tr>
-            <td>Detection:</td>
-            <td><span id="detection">1/5</td>
-          </tr>
-        </table>
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <div class="item-container" align="center">
+             <div class="item">
+               <span class="title">Filename</span>
+               <span class="content">Filenames.apk</span>
+             </div>
+             <div class="item">
+               <span class="title">MD5</span>
+               <span class="content">md5</span>
+             </div>
+            </div>
+          </div>
         </div>
-        <table class="tableResults center-block">
-          <tr>
-            <th class="avListPad">Antivirus</th>
-            <th id="thResults">Results</th>
-          </tr>
-          <tr>
-            <td class="avListPad firstRow">Avast</td>
-            <td class="firstRow"><img src="res/result-green.svg" class="img-responsive resultIcon" alt="result-green" id="iconAvast"></td>
-          </tr>
-          <tr>
-            <td class="avListPad">AVG</td>
-            <td><img src="res/result-green.svg" class="img-responsive resultIcon" alt="result-green" id="iconAVG"></td>
-          </tr>
-          <tr>
-            <td class="avListPad">CM security</td>
-            <td><img src="res/result-green.svg" class="img-responsive resultIcon" alt="result-green" id="iconCM"></td>
-          </tr>
-          <tr>
-            <td class="avListPad">BitDefender</td>
-            <td><img src="res/result-red.svg" class="img-responsive resultIcon" alt="result-red" id="iconBit"></td>
-          </tr>
-          <tr>
-            <td class="avListPad">Malwarebytes</td>
-            <td><img src="res/result-green.svg" class="img-responsive resultIcon" alt="result-green" id="iconMalwarebytes"></td>
-          </tr>
-        </table>
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <div class="item-container" align="center">
+              <h3>Detections</h3>
+              <div class="detections">
+                <span class="first">0</span>
+                <span class="slash">/</span>
+                <span class="last">15</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <table class="tableResults center-block">
+            <tr>
+              <th class="avListPad">Antivirus</th>
+              <th id="thResults">Results</th>
+            </tr>
+            <tr>
+              <td class="avListPad firstRow">Avast</td>
+              <td class="firstRow"><img src="res/result-green.svg" class="img-responsive resultIcon" alt="result-green" id="iconAvast"></td>
+            </tr>
+            <tr>
+              <td class="avListPad">AVG</td>
+              <td><img src="res/result-green.svg" class="img-responsive resultIcon" alt="result-green" id="iconAVG"></td>
+            </tr>
+            <tr>
+              <td class="avListPad">CM security</td>
+              <td><img src="res/result-green.svg" class="img-responsive resultIcon" alt="result-green" id="iconCM"></td>
+            </tr>
+            <tr>
+              <td class="avListPad">BitDefender</td>
+              <td><img src="res/result-red.svg" class="img-responsive resultIcon" alt="result-red" id="iconBit"></td>
+            </tr>
+            <tr>
+              <td class="avListPad">Malwarebytes</td>
+              <td><img src="res/result-green.svg" class="img-responsive resultIcon" alt="result-green" id="iconMalwarebytes"></td>
+            </tr>
+          </table>
+        </div>
       </div>
-
         <footer>
           <p class="footer-copyright">&copy; APK scan 2017</p>
           <a class="footer-tos" href="tos.html">Terms of service</a>
