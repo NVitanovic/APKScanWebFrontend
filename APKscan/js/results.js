@@ -42,7 +42,9 @@ $(document).ready(function()
 			}
 			$('#filenames').html(filenames);
 			var total = 0;
-			for(var prop in result.av){
+			var count = 0;
+			for(var prop in results){
+				count++;
 				if(result.av[prop] === "true"){
 					total++;
 					switch(prop){
@@ -65,6 +67,7 @@ $(document).ready(function()
 				}
 			}
 			$('.first').html(total);
+			$('.last').html(count);
 		},
 		type: "GET"
 	});
