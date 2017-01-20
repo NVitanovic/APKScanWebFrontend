@@ -45,18 +45,20 @@ function callback(data)
 }
 function checkAfterUpload(hash)
 {
+	console.log("interval");
 	getResult(hash, function(data)
 	{
 		if(data.error === undefined)
 		{
-			//nothing no result yet
-			console.log("No data yet...");
+			//ok scan complete redirect
+			console.log("Data available, redirecting...");
+			window.location = "http://apkscan.online/results#" + hash;
 		}
 		else
 		{
-			//ok scan complete redirect
-			console.log("Data available, redirecting...");
-			window.location = "http://api.apkscan.online/api/scan/" + hash;
+			//nothing no result yet
+			console.log("No data yet...");
+			setTimeout(checkAfterUpload(hash), 10 * 1000);
 		}
 	});
 }
@@ -118,6 +120,12 @@ $( document ).ready(function() {
 	var buttonUpload = document.getElementById('buttonUpload');
 	var fileInput = document.getElementById('fileInput');
 	var fileName = document.getElementById('fileName');
+	$("#btnShowResult").click(function(){
+		window.location = "http://apkscan.online/results#" + MD5;
+	});
+	$("#btnReAnalyse").click(function(){
+		fileUpload();
+	});
 	checkboxTos.onchange = function()
 	{
 		buttonScan.disabled = !this.checked;
