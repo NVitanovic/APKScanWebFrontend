@@ -61,7 +61,7 @@
               <h2>Scan result</h2>
              <div class="item">
                <div class="title">MD5 hash</div>
-               <div class="content">md5</div>
+               <div class="content" id="md5">md5</div>
              </div>
             </div>
           </div>
@@ -98,7 +98,7 @@
             </tr>
             <tr>
               <td class="avListPad">BitDefender</td>
-              <td><img src="res/result-red.svg" class="img-responsive resultIcon" alt="result-red" id="iconBit"></td>
+              <td><img src="res/result-green.svg" class="img-responsive resultIcon" alt="result-red" id="iconBit"></td>
             </tr>
             <tr>
               <td class="avListPad">Malwarebytes</td>
@@ -112,15 +112,11 @@
               <h2>Other info</h2>
               <div class="item">
                <div class="title">Last analaysis</div>
-               <div class="content">2017-8-25 10:45:12</div>
-             </div>
-             <div class="item">
-               <div class="title">Total hits</div>
-               <div class="content">132</div>
+               <div class="content" id="lastdate">2017-8-25 10:45:12</div>
              </div>
              <div class="item">
                <div class="title">Known filenames</div>
-               <div class="content">Filenames.apk</div>
+               <div class="content" id="filenames">Filenames.apk</div>
              </div>
              <div class="item">
                <div class="title">Countries the file originated from</div>
@@ -137,7 +133,7 @@
           <a class="footer-tos" href="tos.html">Terms of service</a>
         </footer>
 
-        <script src="js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/results.js"></script>
     </body>
