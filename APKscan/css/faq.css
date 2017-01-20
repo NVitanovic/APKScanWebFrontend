@@ -67,10 +67,16 @@ ul.nav a:hover
 	/*background-color: #254357;*/
 }
 
+h1
+{
+	font-size: 30px !important;
+	margin-bottom: 30px;
+}
 
-
-
-
+p
+{
+	font-size: 18px !important;
+}
 
 footer
 {
@@ -90,6 +96,7 @@ footer
 {
 	display: inline;
 	margin-left: 20px;
+	font-size: 15px !important;
 }
 
 .footer-tos
@@ -98,6 +105,7 @@ footer
 	margin-right: 20px;
 	font-weight: 400;
 }
+
 
 
 
