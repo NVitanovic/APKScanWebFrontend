@@ -43,6 +43,7 @@ $(document).ready(function()
 			$('#filenames').html(filenames);
 			var total = 0;
 			var count = 0;
+			var results = result.av;
 			for(var prop in results){
 				count++;
 				if(result.av[prop] === "true"){
