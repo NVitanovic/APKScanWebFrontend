@@ -120,9 +120,11 @@ $( document ).ready(function() {
 	var buttonUpload = document.getElementById('buttonUpload');
 	var fileInput = document.getElementById('fileInput');
 	var fileName = document.getElementById('fileName');
-	$("#btnShowResult").click(function(){
+
+	$("#btnShowResults").click(function(){
 		window.location = "http://apkscan.online/results#" + MD5;
 	});
+
 	$("#btnReAnalyse").click(function(){
 		fileUpload();
 	});

@@ -32,8 +32,8 @@ $(document).ready(function()
 			$('#md5').html(hash);
 			var first_date = Date.parse(result.first_scan);
 			var second_date = Date.parse(result.last_scan);
-			$('#lastdate').html(second_date);
-			$('#firstdate').html(first_date);
+			$('#lastdate').html(moment(second_date).format("DD-MM-YYYY HH:mm:ss"));
+			$('#firstdate').html(moment(first_date).format("DD-MM-YYYY HH:mm:ss"));
 			var filenames = "";
 			for(var i = 0; i < result.filename.length; i++){
 				filenames += result.filename[i];
