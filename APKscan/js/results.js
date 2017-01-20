@@ -30,8 +30,10 @@ $(document).ready(function()
 			}
 			//ovde popunjavamo elemente stranice
 			$('#md5').html(hash);
-			$('#lastdate').html(result.last_scan);
-			$('#firstdate').html(result.first_scan);
+			var first_date = Date.parse(result.first_scan);
+			var second_date = Date.parse(result.last_scan);
+			$('#lastdate').html(second_date);
+			$('#firstdate').html(first_date);
 			var filenames = "";
 			for(var i = 0; i < result.filename.length; i++){
 				filenames += result.filename[i];
