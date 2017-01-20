@@ -31,6 +31,7 @@ $(document).ready(function()
 			//ovde popunjavamo elemente stranice
 			$('#md5').html(hash);
 			$('#lastdate').html(result.last_scan);
+			$('#firstdate').html(result.first_scan);
 			var filenames = "";
 			for(var i = 0; i < result.filename.length; i++){
 				filenames += result.filename[i];
