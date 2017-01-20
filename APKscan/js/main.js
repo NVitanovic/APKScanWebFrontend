@@ -1,39 +1,145 @@
-var checkboxTos = document.getElementById('checkboxTos');
-var buttonScan = document.getElementById('buttonScan');
-var buttonUpload = document.getElementById('buttonUpload');
-var fileInput = document.getElementById('fileInput');
-var fileName = document.getElementById('fileName');
+
 // hashes are automatically calculated after file is chosen
 // they are in global variables named MD5 and SHA256
-
-checkboxTos.onchange = function()
+function getResult(hash,callfunc)
 {
-	buttonScan.disabled = !this.checked;
-};
-
-buttonUpload.onclick = function()
+	$.ajax({
+		url: 'http://api.apkscan.online/api/scan/' + hash,
+		dataType: 'json',
+		type: 'GET',
+		success: callfunc
+	});
+}
+function callback(data)
 {
-	fileInput.click();
-};
+	console.log(data);
+	if(data.error === undefined)
+	{
+		//good request
+		//show modal with results
+		var first_date = Date.parse(data.first_scan);
+		var second_date = Date.parse(data.last_scan);
+		$("#firstDate").html(moment(first_date).format("DD-MM-YYYY HH:mm:ss"));
+		$("#lastDate").html(moment(second_date).format("DD-MM-YYYY HH:mm:ss"));
 
-fileInput.onchange = function()
+		var cnt = 0;
+		var total = 0;
+		for(var prop in data.av)
+		{
+			total++;
+			if(data.av[prop] === "true")
+				cnt++;
+		}
+		$("#numDetections").html(cnt + "/" + total);
+
+		$('#modalInfo').modal({
+			backdrop: 'static',
+			keyboard: false
+		}); 
+	}
+	else
+	{
+		fileUpload();
+	}
+
+}
+function checkAfterUpload(hash)
 {
-	var name = fileInput.value.replace(/^.*\\/, "");
-	if(name != "")
-		fileName.innerHTML = name;
+	getResult(hash, function(data)
+	{
+		if(data.error === undefined)
+		{
+			//nothing no result yet
+			console.log("No data yet...");
+		}
+		else
+		{
+			//ok scan complete redirect
+			console.log("Data available, redirecting...");
+			window.location = "http://api.apkscan.online/api/scan/" + hash;
+		}
+	});
+}
+function fileUpload()
+{
+	$("#fileInput").simpleUpload("http://api.apkscan.online/api/scan", {
+
+			start: function(file){
+				//show form
+				$('#modalUpload').modal({
+					backdrop: 'static',
+					keyboard: false
+				}); 
+			},
+
+			progress: function(progress){
+				//received progress
+				var p = Math.round(progress);
+				$("#uploadProgess").attr("aria-valuenow", p );
+				$("#uploadProgess").css("width", p + "%" );
+				$("#uploadProgess").html(p + "%" );
+				console.log("upload progress: " + Math.round(progress) + "%");
+			},
+
+			success: function(data){
+				//upload successful
+				console.log("upload successful!");
+				console.log(data);
+				$('#modalUpload').modal('hide');
+				
+				$("#numQueue").html(data.queue);
+				$("#scanETA").html(data.queue);
+				$("#resultURL").html("http://apkscan.online/results#"+data.hash);
+				$("#resultURL").attr("href", "http://apkscan.online/results#"+data.hash);
+
+				$('#modalWait').modal({
+					backdrop: 'static',
+					keyboard: false
+				}); 
+
+				//run the function periodically to check if the scan is complete
+				setInterval(checkAfterUpload(MD5), 10 * 1000);
+			},
+
+			error: function(error){
+				//upload failed
+				console.log("upload error: " + error.name + ": " + error.message);
+				alert("Upload failed!");
+				window.location = "http://apkscan.online";
+			}
+
+		});
+}
+$( document ).ready(function() {
 	
-	// TODO: uplaod a file -> notify if failed
-}
+	
+	var checkboxTos = document.getElementById('checkboxTos');
+	var buttonScan = document.getElementById('buttonScan');
+	var buttonUpload = document.getElementById('buttonUpload');
+	var fileInput = document.getElementById('fileInput');
+	var fileName = document.getElementById('fileName');
+	checkboxTos.onchange = function()
+	{
+		buttonScan.disabled = !this.checked;
+	};
 
-buttonScan.onclick = function()
-{
-	// TODO: if file is uploaded go to results page
+	buttonUpload.onclick = function()
+	{
+		fileInput.click();
+	};
 
-	window.open("results.html", "_self");
-};
+	fileInput.onchange = function()
+	{
+		var name = fileInput.value.replace(/^.*\\/, "");
+		//if(name != "")
+		fileName.innerHTML = name;
 
+	}
 
-document.getElementById('buttonHash').onclick = function()
-{
-	alert("MD5: " + MD5 + "\nSHA256: " + SHA256);
-}
+	buttonScan.onclick = function()
+	{
+		// TODO: if file is uploaded go to results page
+		getResult(MD5,callback);
+		//window.open("results.html", "_self");
+	};
+});
