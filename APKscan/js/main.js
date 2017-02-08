@@ -10,6 +10,7 @@ function getResult(hash,callfunc)
 		success: callfunc
 	});
 }
+
 function callback(data)
 {
 	console.log(data);
@@ -41,8 +42,8 @@ function callback(data)
 	{
 		fileUpload();
 	}
-
 }
+
 function checkAfterUpload(hash)
 {
 	console.log("interval");
@@ -62,6 +63,7 @@ function checkAfterUpload(hash)
 		}
 	});
 }
+
 function fileUpload()
 {
 	$("#fileInput").simpleUpload("http://api.apkscan.online/api/scan", {
@@ -112,22 +114,25 @@ function fileUpload()
 
 		});
 }
-$( document ).ready(function() {
-	
-	
+
+$( document ).ready(function()
+{
 	var checkboxTos = document.getElementById('checkboxTos');
 	var buttonScan = document.getElementById('buttonScan');
 	var buttonUpload = document.getElementById('buttonUpload');
 	var fileInput = document.getElementById('fileInput');
 	var fileName = document.getElementById('fileName');
 
-	$("#btnShowResults").click(function(){
+	$("#btnShowResults").click(function()
+	{
 		window.location = "http://apkscan.online/results#" + MD5;
 	});
 
-	$("#btnReAnalyse").click(function(){
+	$("#btnReAnalyse").click(function()
+	{
 		fileUpload();
 	});
+
 	checkboxTos.onchange = function()
 	{
 		buttonScan.disabled = !this.checked;
@@ -141,9 +146,20 @@ $( document ).ready(function() {
 	fileInput.onchange = function()
 	{
 		var name = fileInput.value.replace(/^.*\\/, "");
-		//if(name != "")
-		fileName.innerHTML = name;
 
+		var fileNameWidth = 750 - 130;
+		if($(window).width() < 768)
+			fileNameWidth = $(window).width() - 130 - 30;
+
+		var numberOfChars = fileNameWidth/12;
+
+		if(name.length > numberOfChars)
+		{
+			name = name.slice(0, numberOfChars-4);
+			name = name + "...";
+		}
+
+		fileName.innerHTML = name;
 	}
 
 	buttonScan.onclick = function()
