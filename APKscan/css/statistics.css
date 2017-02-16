@@ -74,13 +74,23 @@ ul.nav a:hover
 	/*background-color: #254357;*/
 }
 
-.chart1
+#myChart1
 {
-	width: 300px;
-	height: 300px;
+	max-width: 300px;
+	max-height: 300px;
 }
 
+#myChart2
+{
+	max-width: 300px;
+	max-height: 300px;
+}
 
+#myChart3
+{
+	max-width: 500px;
+	max-height: 300px;
+}
 
 
 footer
