@@ -1,6 +1,6 @@
-
 // hashes are automatically calculated after file is chosen
 // they are in global variables named MD5 and SHA256
+
 function getResult(hash,callfunc)
 {
 	$.ajax({
@@ -10,6 +10,7 @@ function getResult(hash,callfunc)
 		success: callfunc
 	});
 }
+
 function callback(data)
 {
 	console.log(data);
@@ -41,8 +42,8 @@ function callback(data)
 	{
 		fileUpload();
 	}
-
 }
+
 function checkAfterUpload(hash)
 {
 	console.log("interval");
@@ -62,6 +63,7 @@ function checkAfterUpload(hash)
 		}
 	});
 }
+
 function fileUpload()
 {
 	$("#fileInput").simpleUpload("http://api.apkscan.online/api/scan", {
@@ -112,22 +114,47 @@ function fileUpload()
 
 		});
 }
-$( document ).ready(function() {
-	
-	
+
+/*function geoLocate()
+{
+    //treba da se posalje GET request na http://freegeoip.net/json
+    /*var res;
+    $.ajax({
+        type: "GET",
+        url: "http://freegeoip.net/json/",
+        dataType: "json",
+        success: function(result)
+        {
+        	res = result;
+            alert(result);
+        }
+    });
+    alert(res);* /
+
+    /*$.getJSON('//freegeoip.net/json/?callback=?', function(data) {
+	  console.log(JSON.stringify(data, null, 2));
+	});* /
+	$.getJSON( "http://smart-ip.net/geoip-json?callback=?", function(data){ alert( data.host); } );
+}*/
+
+$( document ).ready(function()
+{
 	var checkboxTos = document.getElementById('checkboxTos');
 	var buttonScan = document.getElementById('buttonScan');
 	var buttonUpload = document.getElementById('buttonUpload');
 	var fileInput = document.getElementById('fileInput');
 	var fileName = document.getElementById('fileName');
 
-	$("#btnShowResults").click(function(){
+	$("#btnShowResults").click(function()
+	{
 		window.location = "http://apkscan.online/results#" + MD5;
 	});
 
-	$("#btnReAnalyse").click(function(){
+	$("#btnReAnalyse").click(function()
+	{
 		fileUpload();
 	});
+
 	checkboxTos.onchange = function()
 	{
 		buttonScan.disabled = !this.checked;
@@ -141,9 +168,20 @@ $( document ).ready(function() {
 	fileInput.onchange = function()
 	{
 		var name = fileInput.value.replace(/^.*\\/, "");
-		//if(name != "")
-		fileName.innerHTML = name;
 
+		var fileNameWidth = 750 - 130;
+		if($(window).width() < 768)
+			fileNameWidth = $(window).width() - 130 - 30;
+
+		var numberOfChars = fileNameWidth/12;
+
+		if(name.length > numberOfChars)
+		{
+			name = name.slice(0, numberOfChars-4);
+			name = name + "...";
+		}
+
+		fileName.innerHTML = name;
 	}
 
 	buttonScan.onclick = function()
@@ -152,4 +190,23 @@ $( document ).ready(function() {
 		getResult(MD5,callback);
 		//window.open("results.html", "_self");
 	};
+
+	//geoLocate();
+
 });
+
+// cookies
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#254357",
+      "text": "#ffffff"
+    },
+    "button": {
+      "background": "#59A3D6",
+      "text": "#ffffff"
+    }
+  },
+  "theme": "edgeless"
+})});

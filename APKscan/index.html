@@ -10,10 +10,11 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
+        <link rel="icon" type="image/icon" href="favicon.ico">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/cookieconsent.min.css" />
 
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&amp;subset=latin-ext" rel="stylesheet">
 
@@ -24,7 +25,7 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
       <nav class="navbar navbar-fixed-top" role="navigation">
-        <div class="container">
+        <div class="container nav-margin">
           <div class="navbar-header">
           <!--<p class="navbar-text navbar-toggle pull-left navbar-brand">APK scan</p>-->
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -91,6 +92,7 @@
         <script src="js/CryptoJS/components/enc-base64-min.js"></script>
         <script src="js/CryptoJS/components/enc-utf16-min.js"></script>
         <script src="//simpleupload.michaelcbrook.com/js/simpleUpload/simpleUpload.min.js"></script>
+        <script src="js/cookieconsent.min.js"></script>
         <!-- -------------results modal------------------- -->
         <div class="modal fade" id="modalInfo" tabindex="-1" role="dialog" aria-labelledby="infoLabel">
           <div class="modal-dialog" role="document">
@@ -159,11 +161,14 @@
               <div class="modal-body">
                 <div align="center">
                   <p class="big-font">You are #<span id="numQueue"></span> in waiting queue. Please wait, approximately <span id="scanETA"></span> minute(s).</p>
+                  <img src="res/loader.gif">
                   <p>You will be redirected to your results page, when the file is processed!</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        <span id="hidden-resizer"></span>
     </body>
 </html>
