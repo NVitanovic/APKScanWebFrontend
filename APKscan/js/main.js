@@ -1,6 +1,6 @@
-
 // hashes are automatically calculated after file is chosen
 // they are in global variables named MD5 and SHA256
+
 function getResult(hash,callfunc)
 {
 	$.ajax({
@@ -115,6 +115,28 @@ function fileUpload()
 		});
 }
 
+/*function geoLocate()
+{
+    //treba da se posalje GET request na http://freegeoip.net/json
+    /*var res;
+    $.ajax({
+        type: "GET",
+        url: "http://freegeoip.net/json/",
+        dataType: "json",
+        success: function(result)
+        {
+        	res = result;
+            alert(result);
+        }
+    });
+    alert(res);* /
+
+    /*$.getJSON('//freegeoip.net/json/?callback=?', function(data) {
+	  console.log(JSON.stringify(data, null, 2));
+	});* /
+	$.getJSON( "http://smart-ip.net/geoip-json?callback=?", function(data){ alert( data.host); } );
+}*/
+
 $( document ).ready(function()
 {
 	var checkboxTos = document.getElementById('checkboxTos');
@@ -168,4 +190,23 @@ $( document ).ready(function()
 		getResult(MD5,callback);
 		//window.open("results.html", "_self");
 	};
+
+	//geoLocate();
+
 });
+
+// cookies
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#254357",
+      "text": "#ffffff"
+    },
+    "button": {
+      "background": "#59A3D6",
+      "text": "#ffffff"
+    }
+  },
+  "theme": "edgeless"
+})});
