@@ -74,7 +74,25 @@ ul.nav a:hover
 	/*background-color: #254357;*/
 }
 
-#myChart1
+#chartScans
+{
+	max-width: 800px;
+	max-height: 300px;
+}
+
+#chartDevice
+{
+	max-width: 300px;
+	max-height: 300px;
+}
+
+#chartOS
+{
+	max-width: 300px;
+	max-height: 300px;
+}
+
+/*#myChart1
 {
 	max-width: 300px;
 	max-height: 300px;
@@ -90,7 +108,7 @@ ul.nav a:hover
 {
 	max-width: 500px;
 	max-height: 300px;
-}
+}*/
 
 
 footer
