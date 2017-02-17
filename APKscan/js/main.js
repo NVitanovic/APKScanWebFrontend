@@ -139,6 +139,7 @@ function fileUpload()
 
 $( document ).ready(function()
 {
+    var mongoData = new mongoObject();
 	var checkboxTos = document.getElementById('checkboxTos');
 	var buttonScan = document.getElementById('buttonScan');
 	var buttonUpload = document.getElementById('buttonUpload');
@@ -182,17 +183,32 @@ $( document ).ready(function()
 		}
 
 		fileName.innerHTML = name;
+
+
 	}
 
 	buttonScan.onclick = function()
 	{
 		// TODO: if file is uploaded go to results page
-		getResult(MD5,callback);
+        $.when(gatherFingerprintData()).done(function(data)
+        {
+            console.log("Ajax data: " + data);
+            mongoData.fingerprintStatistics = getFingerprintData(data);
+            var file = fileInput.files[0];
+            mongoData.fileStatistics = gatherFileData(file, MD5);
+
+			$.ajax({
+				type: "POST",
+				data: JSON.stringify(mongoData),
+				contentType: "application/json",
+				url: "http://api.apkscan.online/api/stats/scan",
+                processData: false
+			});
+            getResult(MD5,callback);
+        });
+
 		//window.open("results.html", "_self");
 	};
-
-	//geoLocate();
-
 });
 
 // cookies

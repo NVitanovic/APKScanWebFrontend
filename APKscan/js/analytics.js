@@ -43,23 +43,73 @@ function fingerprintObject()
     this.timezone;
     this.language;
     this.isCanvas;
-    this.canvasPrint;
     this.geoLocation;
 }
 
-function gatherData()
-{
-    //ova funkcija se poziva za skupljanje podataka
+function mimeTypeLookup(fname, include_charset, default_mime_type) {
+    var ext, charset = "UTF-8";
 
+    if (include_charset === undefined) {
+        include_charset = false;
+    }
+
+    if (typeof include_charset === "string") {
+        charset = include_charset;
+        include_charset = true;
+    }
+
+    if (fname.lastIndexOf(".") > 0) {
+        ext = fname.substr(fname.lastIndexOf(".") + 1).toLowerCase();
+    }
+    if(ext === "") {
+        ext = fname;
+    }
+    for(var i = 0; i < mimeTypes.length; i++)
+    {
+        if(mimeTypes[i].hasOwnProperty("ext"))
+        {
+            if (mimeTypes[i].ext === ext) {
+                return mimeTypes[i].mime_type;
+            }
+        }
+    }
+    return false;
+}
+
+function fileInfo(file, md5Hash)
+{
+    this.lastModifiedDate = file.lastModifiedDate;
+    this.name = file.name;
+    this.size = file.size;
+    this.type = file.type;
+    if(this.type === "")
+    {
+        this.type = mimeTypeLookup(this.name);
+    }
+    this.MD5hash = md5Hash;
+}
+
+function mongoObject()
+{
+    this.fileStatistics;
+    this.fingerprintStatistics;
+}
+
+function gatherFileData(file, md5hash)
+{
+    var fileStats = new fileInfo(file, md5hash);
+
+    return fileStats;
+}
+
+function gatherFingerprintData()
+{
     //treba da se posalje GET request na http://freegeoip.net/json
-    $.ajax({
+    return $.ajax({
         type: "GET",
         url: "http://freegeoip.net/json/",
-        success: function(result)
-        {
-            getFingerprintData(result);
-        },
-        dataType: "jsonp"
+        dataType: "json",
+        async: false
     });
 }
 
@@ -112,10 +162,6 @@ function getFingerprintData(geoData)
     fingerprintData.timezone = client.getTimeZone();
     fingerprintData.language = client.getLanguage();
     fingerprintData.isCanvas = client.isCanvas();
-    fingerprintData.canvasPrint = client.getCanvasPrint();
 
-    var JSONFingerprint = JSON.stringify(fingerprintData);
-    //opciono dodaj snimanje zvuka i kamerice
-
-    //ovde treba da se posalje request za upis u mongo
+    return fingerprintData;
 }
