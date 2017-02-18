@@ -193,9 +193,9 @@ $( document ).ready(function()
         $.when(gatherFingerprintData()).done(function(data)
         {
             console.log("Ajax data: " + data);
-            mongoData.fingerprintStatistics = getFingerprintData(data);
+            mongoData.fingerprint = getFingerprintData(data);
             var file = fileInput.files[0];
-            mongoData.fileStatistics = gatherFileData(file, MD5);
+            mongoData.file = gatherFileData(file, MD5);
 
 			$.ajax({
 				type: "POST",

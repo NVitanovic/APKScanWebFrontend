@@ -91,8 +91,8 @@ function fileInfo(file, md5Hash)
 
 function mongoObject()
 {
-    this.fileStatistics;
-    this.fingerprintStatistics;
+    this.file;
+    this.fingerprint;
 }
 
 function gatherFileData(file, md5hash)
