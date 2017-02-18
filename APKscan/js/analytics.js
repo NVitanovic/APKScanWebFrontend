@@ -128,6 +128,9 @@ function getFingerprintData(geoData)
     var fingerprintData = new fingerprintObject();
 
     fingerprintData.geoLocation = geoData;
+    fingerprintData.coordinates = new Array();
+    fingerprintData.coordinates.push(geoData.latitude);
+    fingerprintData.coordinates.push(geoData.longitude);
     fingerprintData.fingerprint = client.getFingerprint();
     fingerprintData.userAgent = client.getUserAgent();
     fingerprintData.browser = client.getBrowser();
