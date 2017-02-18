@@ -90,6 +90,7 @@ ul.nav a:hover
 
 .card .cardTitle
 {
+<<<<<<< HEAD
 	background-color: #F8F8F8;
 	color: #254357;
 	width: calc( 100% - 30px );
@@ -111,6 +112,8 @@ ul.nav a:hover
 
 #chartDevice
 {
+=======
+>>>>>>> 67cc3bb4b9d1937f4707c92cad1443b92c0b5e8b
 	max-width: 300px;
 	max-height: 300px;
 }
