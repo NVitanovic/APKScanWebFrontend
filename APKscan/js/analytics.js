@@ -51,6 +51,7 @@ function fingerprintObject()
     this.language;
     this.isCanvas;
     this.geoLocation;
+    this.referrer;
 }
 
 function mimeTypeLookup(fname, include_charset, default_mime_type) {
@@ -114,8 +115,8 @@ function gatherFingerprintData()
     //treba da se posalje GET request na http://freegeoip.net/json
     return $.ajax({
         type: "GET",
-        url: "http://freegeoip.net/json/",
-        dataType: "json",
+        url: "http://geoip.apkscan.online/json/",
+        dataType: "jsonp",
         async: false
     });
 }
@@ -169,6 +170,7 @@ function getFingerprintData(geoData)
     fingerprintData.timezone = client.getTimeZone();
     fingerprintData.language = client.getLanguage();
     fingerprintData.isCanvas = client.isCanvas();
+    fingerprintData.referrer = document.referrer;
 
     return fingerprintData;
 }
