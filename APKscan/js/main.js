@@ -1,6 +1,7 @@
 // hashes are automatically calculated after file is chosen
 // they are in global variables named MD5 and SHA256
 
+
 function getResult(hash,callfunc)
 {
 	$.ajax({
@@ -115,28 +116,6 @@ function fileUpload()
 		});
 }
 
-/*function geoLocate()
-{
-    //treba da se posalje GET request na http://freegeoip.net/json
-    /*var res;
-    $.ajax({
-        type: "GET",
-        url: "http://freegeoip.net/json/",
-        dataType: "json",
-        success: function(result)
-        {
-        	res = result;
-            alert(result);
-        }
-    });
-    alert(res);* /
-
-    /*$.getJSON('//freegeoip.net/json/?callback=?', function(data) {
-	  console.log(JSON.stringify(data, null, 2));
-	});* /
-	$.getJSON( "http://smart-ip.net/geoip-json?callback=?", function(data){ alert( data.host); } );
-}*/
-
 $( document ).ready(function()
 {
     var mongoData = new mongoObject();
@@ -197,14 +176,17 @@ $( document ).ready(function()
             var file = fileInput.files[0];
             mongoData.file = gatherFileData(file, MD5);
 
-			$.ajax({
-				type: "POST",
-				data: JSON.stringify(mongoData),
-				contentType: "application/json",
-				url: "http://api.apkscan.online/api/stats/scan",
-                processData: false
-			});
-            getResult(MD5,callback);
+            if(isValidMD5(MD5))
+            {
+                $.ajax({
+                    type: "POST",
+                    data: JSON.stringify(mongoData),
+                    contentType: "application/json",
+                    url: "http://api.apkscan.online/api/stats/scan",
+                    processData: false
+                });
+                getResult(MD5, callback);
+            }
         });
 
 		//window.open("results.html", "_self");

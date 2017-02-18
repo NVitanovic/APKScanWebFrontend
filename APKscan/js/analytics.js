@@ -1,3 +1,10 @@
+function isValidMD5(md5)
+{
+    if(md5.length === 32 && md5.match("^[A-z0-9]+$"))
+        return true;
+    return false;
+}
+
 function fingerprintObject()
 {
     //ovo je klasa koju cemo prosledjivati u mongo
