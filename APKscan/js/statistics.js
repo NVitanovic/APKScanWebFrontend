@@ -109,17 +109,19 @@ $( document ).ready(function()
         type: 'pie',
         data:
         {
-            labels: ["Windows", "Linux", "Andriod", "iOS"],
+            labels: ["Windows", "Linux", "Mac", "Andriod", "iOS", "Windows Phone", "Other"],
             datasets:
             [{
-                label: '# of things',
-                data: [50, 30, 10, 10],
+                data: [20, 7, 6, 30, 24, 14, 11],
                 backgroundColor:
                 [
                     "#0078d7",
                     "#dd4814",
+                    "#894e97",
                     "#A4C639",
-                    "#9f9e9e"
+                    "#9f9e9e",
+                    "#01bcf3",
+                    "#c3c3c3"
                 ]
             }]
         },
@@ -150,8 +152,8 @@ $( document ).ready(function()
                 data: [90, 10],
                 backgroundColor:
                 [
-                    "#0078d7",
-                    "#dd4814"
+                    "#254357",
+                    "#59A3D6"
                 ]
             }]
         },

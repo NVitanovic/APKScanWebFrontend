@@ -50,27 +50,67 @@
       </nav>
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron col-md-10 col-md-offset-1 col-xs-12">
-        <canvas class="center-block" id="chartScans" width="800" height="300"></canvas>
+      <div class="container">
+        
+        <div class="row">
+
+          <div class="col-md-3 col-sm-6 col-xs-12 text-center">
+            <div class="card">
+              <div id="cardFiles" class="number">10 384</div>
+              <div class="cardTitle">Total files uploaded</div>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6 col-xs-12 text-center">
+            <div class="card">
+              <div id="cardScans" class="number">15 467</div>
+              <div class="cardTitle">Total scans completed</div>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6 col-xs-12 text-center">
+            <div class="card">
+              <div id="cardVirus" class="number">5 752</div>
+              <div class="cardTitle">Total virus detections</div>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6 col-xs-12 text-center">
+            <div class="card">
+              <div id="cardDB" class="number">7 862</div>
+              <div class="cardTitle">Unique files in database</div>
+            </div>
+          </div>
+
+        </div>
+
         </br>
+
+        <div class="row">
+          <canvas class="center-block" id="chartScans" width="800" height="300"></canvas>
+        </div>
+        
+        </br></br></br>
         
         <div class="row">
           <div class="col-md-4 col-xs-12 text-center">
             <canvas class="center-block" id="chartDevice" width="300" height="300"></canvas>
           </div>
           <div class="col-md-4 col-xs-12 text-center">
-            <canvas class="center-block" id="chartOS" width="400" height="300"></canvas>
+            <canvas class="center-block" id="chartOS" width="450" height="300"></canvas>
           </div>
           <div class="col-md-4 col-xs-12 text-center">
             <canvas class="center-block" id="chartExt" width="300" height="300"></canvas>
           </div>
         </div>
 
+        </br></br></br>
+
         <div class="row">
           <canvas class="center-block" id="chartBrowser" width="800" height="300"></canvas>
         </div>
         
-
+        </br></br></br></br></br></br>
         
 
       </div>
