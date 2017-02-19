@@ -24,7 +24,7 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
       <nav class="navbar navbar-fixed-top" role="navigation">
-        <div class="container">
+        <div class="container marginLeft">
           <div class="navbar-header">
           <!--<p class="navbar-text navbar-toggle pull-left navbar-brand">APK scan</p>-->
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -77,8 +77,8 @@
 
           <div class="col-md-3 col-sm-6 col-xs-6 text-center">
             <div class="card">
-              <div id="cardDB" class="number">1337</div>
-              <div class="cardTitle">Number of users in past 24h</div>
+              <div id="cardSize" class="number">1337</div>
+              <div class="cardTitle">Total size of all uploaded files</div>
             </div>
           </div>
 
@@ -100,16 +100,22 @@
             <canvas class="center-block" id="chartOS" width="400" height="330"></canvas>
           </div>
           <div class="col-md-4 col-xs-12 text-center">
-            <canvas class="center-block" id="chartExt" width="300" height="300"></canvas>
+            <canvas class="center-block" id="chartFileSize" width="300" height="300"></canvas>
           </div>
         </div>
 
         </br></br></br>
 
         <div class="row">
-          <canvas class="center-block" id="chartBrowser" width="800" height="300"></canvas>
+          <div class="col-md-6 col-xs-12">
+            <canvas class="center-block" id="chartBrowser" width="800" height="600"></canvas>
+          </div>
+
+          <div class="col-md-6 col-xs-12">
+            <canvas class="center-block" id="chartCountries" width="300" height="400"></canvas>
+          </div>
         </div>
-        
+
         </br></br></br></br></br></br>
         
 

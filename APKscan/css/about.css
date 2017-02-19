@@ -45,6 +45,19 @@ a:hover
 	font-size: 20px;
 }
 
+.marginLeft
+{
+	margin-left: 100px;
+}
+
+@media (max-width: 768px)
+{
+	.marginLeft
+	{
+		margin-left: 0px;
+	}
+}
+
 .icon-bar
 {
 	background-color: white;

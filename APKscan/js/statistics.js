@@ -1,5 +1,77 @@
+function getData()
+{
+    $.ajax({
+        url: 'http://api.apkscan.online/api/stats/',
+        dataType: 'json',
+        type: 'GET',
+        async: false,
+        success: setData
+    });
+}
+
+// cards
+var cardFiles;
+var cardScans;
+var cardVirus;
+var cardSize;
+
+// charts
+var chartScansData = new Array();
+var chartDeviceData = new Array();
+var chartOSData = new Array();
+var chartFileSizeData = new Array(); 
+var chartBrowserData = new Array();
+var chartCountriesData = new Array();
+var chartCountriesLabels = new Array();
+
+function setData(data)
+{
+    // cards
+    document.getElementById("cardFiles").innerHTML = data.uploads;
+    document.getElementById("cardScans").innerHTML = data.scans;
+    document.getElementById("cardVirus").innerHTML = data.detections;
+    document.getElementById("cardSize").innerHTML = data.totalfilesize + " MB";
+
+    // charts
+    chartScansData = [data.weekscans["7"], data.weekscans["6"], data.weekscans["5"], data.weekscans["4"], data.weekscans["3"], data.weekscans["2"], data.weekscans["1"]];
+    chartDeviceData = [ parseInt(data.device.tablet) + parseInt(data.device.mobile), data.device.desktop];
+    chartOSData = [data.os.Windows, parseInt(data.os.OpenBSD) + parseInt(data.os.Linux) + parseInt(data.os.NetBSD), data.os.Android, data.os.iOS, data.os["Windows Phone"], parseInt(data.os["Mac OS"]) + parseInt(data.os["PLAYSTATION"]) + parseInt(data.os["Firefox OS"]) + parseInt(data.os["Nintendo"]) + parseInt(data.os["PlayStation"])];
+    chartFileSizeData = [data.filesizes["<1MB"], data.filesizes["<10MB"], data.filesizes["<50MB"], data.filesizes[">50MB"]];
+    chartBrowserData = [data.browser["Chrome"], data.browser["Firefox"], data.browser["Opera"], parseInt(data.browser["IE"]) + parseInt(data.browser["IEMobile"]), data.browser["Edge"], parseInt(data.browser["Safari"]) + parseInt(data.browser["Mobile Safari"]), data.browser["Android Browser"], parseInt(data.browser["Silk"]) + parseInt(data.browser["rekonq"])];
+
+    var tmp = data.countries;
+    var tmpArray = new Array();
+    for(a in tmp)
+    {
+        tmpArray.push([a, tmp[a]]);
+    }
+    tmpArray.sort(function(a,b){return a[1] - b[1]});
+    tmpArray.reverse();
+    //alert(tmpArray);
+
+    for(i = 0; i < 6; i++)
+    {
+        chartCountriesLabels.push(tmpArray[i][0]);
+        chartCountriesData.push(tmpArray[i][1]);
+    }
+
+    //alert(chartCountriesLabels);
+    //alert(chartCountriesData);
+
+    var sum = 0;
+    for(i = 6; i < tmpArray.length; i++)
+    {
+        sum += tmpArray[i][1];
+    }
+
+    chartCountriesLabels.push("Other");
+    chartCountriesData.push(sum);
+}
+
 $( document ).ready(function()
 {
+    getData();
+
     // number of files analysed per day in last 7 days
     var chartScans = new Chart( document.getElementById("chartScans"),
     {
@@ -12,7 +84,7 @@ $( document ).ready(function()
                 label: 'Lines',
                 fill: false,
                 lineTension: 0,
-                data: [10, 21, 20, 30, 25, 52, 50],
+                data: chartScansData,
                 backgroundColor: "#254357",
                 borderColor: "#254357"
             }]
@@ -80,7 +152,7 @@ $( document ).ready(function()
             labels: ["Personal computer", "Mobile device"],
             datasets:
             [{
-                data: [60, 40],
+                data: chartDeviceData,
                 backgroundColor:
                 [
                     "#254357",
@@ -112,7 +184,7 @@ $( document ).ready(function()
             labels: ["Windows", "Linux", "Andriod", "iOS", "Windows Phone", "Other"],
             datasets:
             [{
-                data: [20, 7, 30, 24, 14, 11],
+                data: chartOSData,
                 backgroundColor:
                 [
                     "#0078d7",
@@ -139,20 +211,22 @@ $( document ).ready(function()
         }
     });
 
-    // file type
-    var chartExt = new Chart(document.getElementById("chartExt"),
+    // file sizes
+    var chartFileSize = new Chart(document.getElementById("chartFileSize"),
     {
         type: 'pie',
         data:
         {
-            labels: [".apk", "other"],
+            labels: ["<1MB", "<10MB", "<50MB", ">50MB"],
             datasets:
             [{
-                data: [90, 10],
+                data: chartFileSizeData,
                 backgroundColor:
                 [
+                    "#002032",
                     "#254357",
-                    "#59A3D6"
+                    "#59A3D6",
+                    "#8dd5ec"
                 ]
             }]
         },
@@ -162,7 +236,7 @@ $( document ).ready(function()
             title:
             {
                 display: true,
-                text: 'File types',
+                text: 'Sizes of uploaded files',
                 fontFamily: "'Open Sans', sans-serif",
                 fontStyle: "400",
                 fontSize: 20,
@@ -181,7 +255,7 @@ $( document ).ready(function()
             datasets:
             [{
                 label: '# of Votes',
-                data: [26, 18, 15, 3, 7, 10, 20, 3],
+                data: chartBrowserData,
                 backgroundColor: "#254357"
             }]
         },
@@ -206,7 +280,8 @@ $( document ).ready(function()
                 [{
                     ticks:
                     {
-                        fontColor: "#254357"
+                        fontColor: "#254357",
+                        fontSize: 14,
                     },
                     gridLines:
                     {
@@ -232,6 +307,67 @@ $( document ).ready(function()
             {
                 display: true,
                 text: 'User browsers',
+                fontFamily: "'Open Sans', sans-serif",
+                fontStyle: "400",
+                fontSize: 20,
+                fontColor: "#254357"
+            }
+        }
+    });
+
+    // Countries
+    var chartCountries = new Chart(document.getElementById("chartCountries"),
+    {
+        type: 'polarArea',
+        data:
+        {
+            labels: chartCountriesLabels,
+            datasets:
+            [{
+                data: chartCountriesData,
+                backgroundColor:
+                [
+                    /*"#002032",
+                    "#254357",
+                    "#59A3D6",
+                    "#8dd5ec",
+                    "#FF5900",
+                    "#FF8A4C",
+                    "#c9c9c9"*/
+
+                    "#546ad9",
+                    "#54c2d9",
+                    "#54d97d",
+                    "#ced954",
+                    "#d9a054",
+                    "#d95454",
+                    "#c9c9c9",
+
+                ]
+            }]
+        },
+        options:
+        {
+            legend: {labels:{fontColor: "#254357"}},
+            legend:
+            {
+                display: true,
+                position: "bottom"
+            },
+            tooltips:
+            {
+                callbacks:
+                {
+                   label: function(tooltipItem)
+                   {
+                          return tooltipItem.yLabel;
+                   }
+                }
+            },
+            title:
+            {
+                display: true,
+                text: 'Submissions by country',
                 fontFamily: "'Open Sans', sans-serif",
                 fontStyle: "400",
                 fontSize: 20,
