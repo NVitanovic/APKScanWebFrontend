@@ -181,7 +181,7 @@ $( document ).ready(function()
         type: 'pie',
         data:
         {
-            labels: ["Windows", "Linux", "Andriod", "iOS", "Windows Phone", "Other"],
+            labels: ["Windows", "Linux", "Android", "iOS", "Windows Phone", "Other"],
             datasets:
             [{
                 data: chartOSData,
