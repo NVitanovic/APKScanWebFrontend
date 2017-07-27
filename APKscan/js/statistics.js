@@ -98,7 +98,9 @@ $( document ).ready(function()
                     ticks:
                     {
                         beginAtZero: false,
-                        fontColor: "#254357"
+                        fontColor: "#254357",
+                        stepSize: 1,
+                        beginAtZero: true
                     },
                     gridLines:
                     {
